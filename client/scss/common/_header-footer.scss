@@ -1,0 +1,83 @@
+// 这里之所以定义 html 为 position: relative; 主要为了实现，不论页面高度如何，底部始终在最下面显示
+html {
+  position: relative;
+}
+
+html, body {
+  height: auto;
+  min-height: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2.5rem;
+
+  &-logo {
+    img {
+      display: inline-block;
+      width: 106px;
+      height: 39px;
+    }
+  }
+
+  &-nav {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+
+    &-item {
+      margin: 0 1.25rem;
+
+      a {
+        display: block;
+        padding: .5rem 0;
+        position: relative;
+        cursor: pointer;
+        text-decoration: none;
+        color: #fff;
+        font-size: .825rem;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          border-bottom: 1px solid #fff;
+          transition: width 400ms ease-in-out;
+        }
+
+        &:hover::after {
+          width: 52px;
+        }
+      }
+
+      &.active {
+        a::after {
+          width: 52px;
+        }
+      }
+    }
+  }
+}
+
+// 页面底部样式
+.footer-assist {
+  // 此处的数值等于 footer 的高度 + 预留的间距
+  margin-top: 8rem;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 2rem 0;
+  background: #000;
+  font-size: .75rem;
+  color: rgba(#fff, .2);
+  text-align: center;
+}

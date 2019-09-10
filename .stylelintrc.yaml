@@ -1,0 +1,101 @@
+# 需要对某一规则忽略时，可以使用 stylelint-disable 来处理，比如
+# /* stylelint-disable color-no-hex */
+# 基于 stylelint-config-ultimate，stylelint-config-ultimate 又是基于 stylelint-config-standard 和
+# 插件 stylelint-order 配置，详细规则可以看这里 https://github.com/joy-web/stylelint-config-ultimate/blob/master/index.js
+
+extends: stylelint-config-ultimate
+ignoreFiles:
+  - node_modules/**/*
+  - dist/**/*
+plugins:
+  - stylelint-scss
+rules:
+  # stylelint-scss 插件配置
+  # @else 语句后写内容需要在新的一行中写
+  scss/at-else-closing-brace-newline-after: always-last-in-chain
+  # @else 前面需要空格
+  scss/at-else-closing-brace-space-after: always-intermediate
+  # @else 前面不需要空行
+  scss/at-else-empty-line-before: never
+  # @else if 与表达式之间是否有空格
+  scss/at-else-if-parentheses-space-before: null
+
+  # @extend 丢失了占位符 %，或者是其他
+  scss/at-extend-no-missing-placeholder: true
+
+  # 传参时，是否需要把名字也传过去
+  scss/at-function-named-arguments: null
+  # 函数和括号之间是否需要空格
+  scss/at-function-parentheses-space-before: null
+
+  # @if 语句后写内容需要在新的一行中写
+  scss/at-if-closing-brace-newline-after: always-last-in-chain
+  # @if 前面需要空格
+  scss/at-if-closing-brace-space-after: always-intermediate
+
+  # @import 时不用写下划线 _
+  scss/at-import-no-partial-leading-underscore: true
+  # @import 时，不需要加后缀名黑名单
+  scss/at-import-partial-extension-blacklist:
+    - scss
+  # @import 时，需要加后缀名白名单
+  scss/at-import-partial-extension-whitelist:
+    - css
+
+  # 调用 mixin 时，是否需要加括号
+  scss/at-mixin-argumentless-call-parentheses: null
+  # 调用 mixin 时，是否显式带上参数名
+  scss/at-mixin-named-arguments: null
+  # @mixin 名称格式
+  scss/at-mixin-pattern: null
+
+  # 不要出现 scss 中无效的规则
+  scss/at-rule-no-unknown: true
+
+  # 定义变量，变量名和值换行情况
+  scss/dollar-variable-colon-newline-after: always-multi-line
+  # 变量 : 后空格情况
+  scss/dollar-variable-colon-space-after: always
+  # 变量 : 前空格情况
+  scss/dollar-variable-colon-space-before: never
+  # 定义变量时，是否需要加上 !default
+  scss/dollar-variable-default: null
+  # 变量之前是否有空格
+  scss/dollar-variable-empty-line-before: null
+  # 变量对于字符串需要 #{$myVar}
+  scss/dollar-variable-no-missing-interpolation: true
+  # 变量命名格式
+  scss/dollar-variable-pattern: null
+
+  # 占位表达式命名格式
+  scss/percent-placeholder-pattern: null
+
+  # 注释
+  scss/double-slash-comment-empty-line-before: null
+  scss/double-slash-comment-inline: null
+  scss/double-slash-comment-whitespace-inside: always
+
+  # media 是否需要变量
+  scss/media-feature-value-dollar-variable: null
+
+  # 操作符之后不允许断行
+  scss/operator-no-newline-after: true
+  # 操作符之前不允许断行
+  scss/operator-no-newline-before: true
+  # 操作符中间需要空格
+  scss/operator-no-unspaced: true
+
+  # 不太明白啥意思
+  scss/partial-no-import: null
+
+  # Prevents unneeded nesting selectors 不要写多余的嵌套 &
+  scss/selector-no-redundant-nesting-selector: true
+
+  scss/no-dollar-variables: null
+  # 不允许有重复的变量，忽略局部变量
+  scss/no-duplicate-dollar-variables:
+    - true
+    - ignoreInside:
+        - at-rule
+        - nested-at-rule
+
