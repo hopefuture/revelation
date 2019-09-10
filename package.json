@@ -13,7 +13,7 @@
   ],
   "main": "",
   "scripts": {
-    "build:scss": "node-sass ./client/scss/home.scss ./client/css/home.css && node-sass ./client/scss/about.scss ./client/css/about.css --watch",
+    "build:scss": "node-sass ./client/scss -o ./client/css -w -r",
     "build:dev": "NODE_ENV=development rollup -c ./build/rollup.config.js -w",
     "start": "run-p build:**",
     "build:css": "run-p 'build:scss --watch'"
