@@ -21,7 +21,6 @@
     "build": "node-sass ./client/scss -o ./client/css && postcss client/css/*.css -r && NODE_ENV=production rollup -c ./build/rollup.config.js",
     "postbuild": "cpy ./ ../dist --cwd=client --parents && rimraf ./dist/scss ./dist/scripts/src"
   },
-  "license": "ISC",
   "dependencies": {
     "animate.css": "^3.7.2",
     "bootstrap": "^4.3.1",
@@ -52,5 +51,14 @@
     "stylelint": "^10.1.0",
     "stylelint-config-ultimate": "^0.2.2",
     "stylelint-scss": "^3.10.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:hopefuture/revelation.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hopefuture/revelation/issues"
+  },
+  "homepage": "https://github.com/hopefuture/revelation#readme"
 }
