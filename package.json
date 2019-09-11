@@ -16,7 +16,7 @@
     "clean": "rimraf ./dist",
     "build:scss": "node-sass ./client/scss -o ./client/css -w -r",
     "build:dev": "NODE_ENV=development rollup -c ./build/rollup.config.js -w",
-    "start": "run-p build:**",
+    "start": "serve client && run-p build:**",
     "prebuild": "npm run clean",
     "build": "node-sass ./client/scss -o ./client/css && postcss client/css/*.css -r && NODE_ENV=production rollup -c ./build/rollup.config.js",
     "postbuild": "cpy ./ ../dist --cwd=client --parents && rimraf ./dist/scss ./dist/scripts/src"
@@ -48,6 +48,7 @@
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-terser": "^5.1.1",
+    "serve": "^11.1.0",
     "stylelint": "^10.1.0",
     "stylelint-config-ultimate": "^0.2.2",
     "stylelint-scss": "^3.10.1"
