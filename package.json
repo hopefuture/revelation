@@ -16,7 +16,8 @@
     "clean": "rimraf ./dist",
     "build:scss": "node-sass ./client/scss -o ./client/css -w -r",
     "build:dev": "NODE_ENV=development rollup -c ./build/rollup.config.js -w",
-    "start": "serve client && run-p build:**",
+    "start": "serve client --debug",
+    "start:dev": "run-p build:**",
     "prebuild": "npm run clean",
     "build": "node-sass ./client/scss -o ./client/css && postcss client/css/*.css -r && NODE_ENV=production rollup -c ./build/rollup.config.js",
     "postbuild": "cpy ./ ../dist --cwd=client --parents && rimraf ./dist/scss ./dist/scripts/src"
@@ -24,6 +25,7 @@
   "dependencies": {
     "animate.css": "^3.7.2",
     "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
     "swiper": "^4.5.0",
     "text-effect": "^1.0.1"
   },
