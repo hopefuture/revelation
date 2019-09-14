@@ -8,6 +8,15 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 2rem 2.5rem;
+  background-color: rgba(#171717, .9);
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: transform 600ms cubic-bezier(.65, .06, .19, .96), opacity 800ms ease-in-out, background 800ms ease-in-out;
+
+  &.hide {
+    opacity: 0;
+    transform: translate3d(0, -100px, 0);
+  }
 
   &-logo {
     display: block;

@@ -35,18 +35,33 @@ html, body {
 }
 
 .swiper-pagination-bullet {
+  position: relative;
   width: 40px;
   height: auto;
   border-radius: 0;
   background: transparent;
   padding: 0 10px;
-  border-left: 2px solid transparent;
   font-size: .875rem;
   cursor: pointer;
   transition: border 300ms ease-in-out, transform 400ms cubic-bezier(.45, 0, .27, 1), opacity 400ms ease-in-out;
   opacity: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -2px;
+    top: 4px;
+    width: 1px;
+    height: 0;
+    background-color: #fff;
+    transition: height 300ms cubic-bezier(.45, 0, .27, 1);
+  }
+
+  &:hover::before {
+    height: 77px;
+  }
 }
 
-.swiper-pagination-bullet-active {
-  border-left-color: #fff;
+.swiper-pagination-bullet-active::before {
+  height: 77px;
 }

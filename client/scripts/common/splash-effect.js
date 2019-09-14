@@ -1,11 +1,14 @@
 // 进入首页时动画效果
 import { addClass, removeClass } from '../utils/dom-class';
 
+const doc = document;
+
 function animationRun () {
-  const splashContainer = $('.splash-container .transition-logo-desktop');
-  const $curSpan = splashContainer.find('.active').removeClass('active');
-  const $next = $curSpan.next().length ? $curSpan.next() : splashContainer.children().eq(0);
-  $next.addClass('active');
+  const splashContainer = doc.querySelector('.splash-container .transition-logo-desktop');
+  const curSpan = splashContainer.querySelector('.active');
+  removeClass(curSpan, 'active');
+  const nextSpan = curSpan.nextElementSibling ? curSpan.nextElementSibling : splashContainer.firstElementChild;
+  addClass(nextSpan, 'active');
 }
 
 export default function () {
@@ -25,7 +28,7 @@ export default function () {
     
     setTimeout(() => {
       removeClass('.splash-bg', 'open');
-    }, 2400);
+    }, 2000);
     
     setTimeout(() => {
       clearInterval(interval);
