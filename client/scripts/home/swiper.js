@@ -1,4 +1,5 @@
 import Swiper from 'swiper';
+import textEffect from './text-effect';
 
 const doc = document;
 
@@ -11,11 +12,12 @@ export default function () {
     tabs = ['关于我们', '项目概览', '联系我们'];
   }
   
+  let te;
   new Swiper('.swiper-container', {
     direction: 'vertical',
     autoplay: true,
     loop: true,
-    speed: 1000,
+    speed: 800,
     effect: 'fade',
     fadeEffect: {
       crossFade: true
@@ -26,6 +28,22 @@ export default function () {
       type: 'bullets',
       renderBullet: function (index, className) {
         return '<div class="' + className + '">' + tabs[index] + '</div>';
+      }
+    },
+    on: {
+      init () {
+        te = textEffect();
+      },
+      slideChange () {
+        if (te) {
+          te.textillate('start');
+        }
+      },
+      setTranslate (translate) {
+        console.info('translate', translate);
+      },
+      setTransition (transition) {
+        console.info('transition', transition);
       }
     }
   });

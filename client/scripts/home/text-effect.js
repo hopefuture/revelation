@@ -2,7 +2,7 @@ import TextEffect from 'text-effect';
 
 // 首页文本动画效果
 export default function () {
-  new TextEffect('.text-animate').textillate({
+  return new TextEffect('.text-animate').textillate({
     
     // enable looping
     loop: false,

@@ -1,5 +1,4 @@
 import swiper from './swiper';
-import textEffect from './text-effect';
 import splashEffect from '../common/splash-effect';
 import '../../scss/home.scss';
 
@@ -48,7 +47,6 @@ class Site {
   // 动画效果结束后
   splashEffectEnd () {
     swiper();
-    textEffect();
   }
 }
 
