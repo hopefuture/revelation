@@ -47,7 +47,7 @@
         text-indent: -9999px;
         height: 2px;
         border-bottom: 1px solid #fff;
-        transition: width 1100ms cubic-bezier(.65,.06,.19,.96), border 400ms ease-in-out;
+        transition: width 1100ms cubic-bezier(.65, .06, .19, .96), border 400ms ease-in-out;
         vertical-align: middle;
         width: 100px;
         margin: 0 10px;
@@ -65,4 +65,15 @@
     font-size: 30px;
     margin-top: 20px;
   }
+}
+
+.home-footer {
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  width: 100%;
+  padding: 1.5rem 0;
+  color: rgba(#fff, .5);
+  font-size: .75rem;
+  text-align: center;
 }

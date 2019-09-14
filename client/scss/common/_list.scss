@@ -17,17 +17,6 @@
   }
 
   &-title {
-    &::after {
-      display: inline-block;
-      content: ".";
-      text-indent: -9999px;
-      height: 0;
-      border-bottom: 1px solid #fff;
-      transition: width 1100ms cubic-bezier(.65, .06, .19, .96), border 400ms ease-in-out;
-      vertical-align: middle;
-      width: 70px;
-      margin: 0 16px;
-    }
   }
 
   &-section {
@@ -42,9 +31,12 @@
     padding-bottom: 3.125rem;
 
     &-title {
+      display: flex;
+      align-items: flex-end;
       position: relative;
       margin-bottom: 3rem;
       font-size: 1.125rem;
+      white-space: nowrap;
 
       &::after {
         position: absolute;
@@ -59,7 +51,7 @@
 
       .subtitle {
         margin-left: .5rem;
-        color: rgba(#fff, .5);
+        color: rgba(#fff, .9);
         font-size: .875rem;
       }
     }

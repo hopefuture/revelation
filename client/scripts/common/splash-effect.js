@@ -1,5 +1,5 @@
 // 进入首页时动画效果
-import { addClass, removeClass } from './utils/dom-class';
+import { addClass, removeClass } from '../utils/dom-class';
 
 function animationRun () {
   const splashContainer = $('.splash-container .transition-logo-desktop');

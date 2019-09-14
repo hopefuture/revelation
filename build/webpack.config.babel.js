@@ -55,10 +55,10 @@ const webpackConfig = {
    * 所以根据实际需要是否引入 babel-polyfill
    */
   entry: {
-    home: ['./client/scripts/home.js'],
-    about: ['./client/scripts/about.js'],
-    contact: ['./client/scripts/contact.js'],
-    overview: ['./client/scripts/overview.js']
+    home: ['./client/scripts/home/index.js'],
+    about: ['./client/scripts/about/index.js'],
+    contact: ['./client/scripts/contact/index.js'],
+    overview: ['./client/scripts/overview/index.js']
   },
   
   // 出口， 让 webpack 把处理完成的文件放在哪里
