@@ -1,6 +1,7 @@
 import swiper from './swiper';
 import textEffect from './text-effect';
 import splashEffect from './splash-effect';
+import '../scss/home.scss';
 
 // 首页效果
 class Site {

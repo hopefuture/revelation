@@ -19,7 +19,9 @@ module.exports = {
     "parser": "babel-eslint",
     "sourceType": "module",
   },
-  "globals": {},
+  "globals": {
+    "$": true
+  },
   "extends": [
     "standard",
   ],
