@@ -32,6 +32,8 @@
   align-items: center;
   flex-direction: column;
   color: #fff;
+  text-align: center;
+  cursor: pointer;
 
   &-header {
     display: flex;
@@ -74,6 +76,18 @@
   width: 100%;
   padding: 1.5rem 0;
   color: rgba(#fff, .5);
-  font-size: .75rem;
+  font-size: 12px;
   text-align: center;
+}
+
+// 手机端
+
+@media (max-width: 767.98px) {
+  .home-content-subtitle {
+    font-size: 30px;
+  }
+
+  .home-content-section {
+    font-size: 26px;
+  }
 }

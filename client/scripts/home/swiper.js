@@ -15,8 +15,8 @@ export default function () {
   let te;
   new Swiper('.swiper-container', {
     direction: 'vertical',
-    autoplay: true,
-    loop: true,
+    // autoplay: true,
+    // loop: true,
     speed: 800,
     effect: 'fade',
     fadeEffect: {

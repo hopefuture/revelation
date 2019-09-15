@@ -13,16 +13,13 @@
   }
 
   &-header {
-    font-size: 1.125rem;
-  }
-
-  &-title {
+    font-size: 18px;
   }
 
   &-section {
     margin: 1.75rem 0 3.125rem;
     color: rgba(#fff, .5);
-    font-size: .75rem;
+    font-size: 12px;
     line-height: 2;
   }
 
@@ -35,7 +32,7 @@
       align-items: flex-end;
       position: relative;
       margin-bottom: 3rem;
-      font-size: 1.125rem;
+      font-size: 18px;
       white-space: nowrap;
 
       &::after {
@@ -52,7 +49,7 @@
       .subtitle {
         margin-left: .5rem;
         color: rgba(#fff, .9);
-        font-size: .875rem;
+        font-size: 14px;
       }
     }
 
@@ -60,7 +57,7 @@
       display: flex;
       margin-top: 1.5rem;
       margin-bottom: 1.5rem;
-      font-size: 1.125rem;
+      font-size: 18px;
       white-space: nowrap;
 
       &-first {
@@ -72,14 +69,14 @@
         margin-top: .3125rem;
         margin-left: .5rem;
         color: rgba(#fff, .9);
-        font-size: .875rem;
+        font-size: 14px;
       }
     }
 
     &-intro {
       margin-top: 1.5rem;
       color: rgba(#fff, .5);
-      font-size: .75rem;
+      font-size: 12px;
       line-height: 2;
     }
   }
