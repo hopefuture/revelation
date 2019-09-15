@@ -81,7 +81,6 @@
 }
 
 // 手机端
-
 @media (max-width: 767.98px) {
   .home-content-subtitle {
     font-size: 30px;
@@ -89,5 +88,10 @@
 
   .home-content-section {
     font-size: 26px;
+  }
+
+  .logo-wrapper {
+    top: 20px;
+    left: 30px;
   }
 }

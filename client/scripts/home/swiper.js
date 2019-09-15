@@ -19,6 +19,8 @@ export default function () {
     loop: true,
     speed: 800,
     effect: 'fade',
+    allowTouchMove: true,
+    touchAngle: 90,
     fadeEffect: {
       crossFade: true
     },
