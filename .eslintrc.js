@@ -5,6 +5,7 @@
  **/
 module.exports = {
   "rules": {
+    "no-unused-vars": "off",
     "no-new": "off",
     "no-trailing-spaces": "off",
     "semi": ["error", "always"] // 覆盖了 eslint-config-standard 规则 semi

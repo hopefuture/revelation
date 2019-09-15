@@ -13,14 +13,24 @@ export default function () {
   }
   
   let te;
-  new Swiper('.swiper-container', {
+  
+  const swiper = new Swiper('.swiper-container', {
     direction: 'vertical',
-    autoplay: true,
+    autoplay: {
+      delay: 3000,
+      stopOnLastSlide: false,
+      disableOnInteraction: true,
+      reverseDirection: false,
+      waitForTransition: false
+    },
     loop: true,
-    speed: 800,
-    effect: 'fade',
+    speed: 300,
     allowTouchMove: true,
     touchAngle: 90,
+    mousewheel: {
+      sensitivity: 10
+    },
+    effect: 'fade',
     fadeEffect: {
       crossFade: true
     },
