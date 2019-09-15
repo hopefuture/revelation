@@ -56,8 +56,28 @@
       }
     }
 
+    &-header {
+      display: flex;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.125rem;
+      white-space: nowrap;
+
+      &-first {
+        padding-bottom: 1.4rem;
+        border-bottom: 1px solid;
+      }
+
+      &-second {
+        margin-top: .3125rem;
+        margin-left: .5rem;
+        color: rgba(#fff, .9);
+        font-size: .875rem;
+      }
+    }
+
     &-intro {
-      margin-top: 1.75rem;
+      margin-top: 1.5rem;
       color: rgba(#fff, .5);
       font-size: .75rem;
       line-height: 2;

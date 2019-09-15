@@ -17,7 +17,8 @@
     "start": "cross-env NODE_ENV=development webpack-dev-server --config ./build/webpack.config.babel.js",
     "prebuild": "npm run clean",
     "build": "cross-env NODE_ENV=production webpack --progress --config ./build/webpack.config.babel.js",
-    "postbuild": "sh ./build/to-dist.sh"
+    "postbuild": "sh ./build/to-dist.sh && zip -q -r './revelation.zip' './dist' && mv ./revelation.zip ./dist",
+    "start:prod": "serve dist"
   },
   "dependencies": {
     "animate.css": "^3.7.2",

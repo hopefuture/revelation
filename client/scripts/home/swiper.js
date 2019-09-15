@@ -38,12 +38,6 @@ export default function () {
         if (te) {
           te.textillate('start');
         }
-      },
-      setTranslate (translate) {
-        console.info('translate', translate);
-      },
-      setTransition (transition) {
-        console.info('transition', transition);
       }
     }
   });

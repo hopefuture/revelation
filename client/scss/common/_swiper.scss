@@ -41,7 +41,7 @@ html, body {
   border-radius: 0;
   background: transparent;
   padding: 0 10px;
-  font-size: .875rem;
+  font-size: .75rem;
   cursor: pointer;
   transition: border 300ms ease-in-out, transform 400ms cubic-bezier(.45, 0, .27, 1), opacity 400ms ease-in-out;
   opacity: 1;
@@ -58,10 +58,10 @@ html, body {
   }
 
   &:hover::before {
-    height: 77px;
+    height: 64px;
   }
 }
 
 .swiper-pagination-bullet-active::before {
-  height: 77px;
+  height: 64px;
 }
