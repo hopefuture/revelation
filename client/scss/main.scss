@@ -2,3 +2,10 @@
 @import "common/font";
 @import "common/header-footer";
 @import "common/list";
+
+// 移动端
+@media (max-width: 767.98px) {
+  .col-lg-6 {
+    text-align: center;
+  }
+}

@@ -1,9 +1,12 @@
-import { addClass, removeClass } from '../utils/dom-class';
+import { addClass, removeClass, containsClass } from '../utils/dom-class';
 
 const doc = document;
 
 export default function () {
   window.addEventListener('wheel', (event) => {
+    if (containsClass('body', 'header-menu-open')) {
+      return;
+    }
     const { deltaX, deltaY } = event;
     const detail = deltaX || deltaY;
     const direction = (
