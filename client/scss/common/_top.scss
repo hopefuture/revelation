@@ -1,0 +1,20 @@
+.go-top {
+  position: fixed;
+  right: 150px;
+  bottom: 50px;
+  z-index: 10;
+  width: 61px;
+  height: 61px;
+  background: url("../../images/top.png");
+  cursor: pointer;
+  opacity: 0;
+  transform: scale(.8);
+  pointer-events: none;
+  transition: transform 300ms cubic-bezier(.45, 0, .27, 1), opacity 400ms cubic-bezier(.45, 0, .27, 1);
+
+  &.show {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+  }
+}

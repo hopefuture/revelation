@@ -6,9 +6,10 @@ let num = 0;
 const speed = 100;
 function animationRun () {
   const menuLis = doc.querySelectorAll('.header .header-menu-list li');
+  const len = menuLis ? menuLis.length : 0;
   if (menuLis && menuLis.length > 0) {
     addClass(menuLis[num++], 'visible');
-    if (num >= 3) {
+    if (num >= len) {
       num = 0;
     } else {
       setTimeout(animationRun, speed);

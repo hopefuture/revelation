@@ -24,7 +24,7 @@ export default function () {
       waitForTransition: false
     },
     loop: true,
-    speed: 300,
+    speed: 800,
     allowTouchMove: true,
     touchAngle: 90,
     mousewheel: {

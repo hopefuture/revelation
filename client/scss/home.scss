@@ -4,8 +4,8 @@
 .logo-wrapper {
   position: absolute;
   z-index: 100;
-  top: 45px;
-  left: 135px;
+  top: 2.875rem;
+  left: 8.5rem;
 
   img {
     display: inline-block;
@@ -51,20 +51,21 @@
         border-bottom: 1px solid #fff;
         vertical-align: middle;
         width: 0;
-        margin: 0 10px;
+        margin: 0 .625rem;
       }
     }
   }
 
   &-subtitle {
-    margin: 16px 0 8px;
-    font-size: 50px;
+    margin: 2rem 0 .5rem;
+    font-size: 42px;
     line-height: 1.2;
+    letter-spacing: 2px;
   }
 
   &-section {
     font-size: 30px;
-    margin-top: 20px;
+    margin-top: 1rem;
   }
 }
 
@@ -90,7 +91,7 @@
   }
 
   .logo-wrapper {
-    top: 20px;
-    left: 30px;
+    top: 1.25rem;
+    left: 2rem;
   }
 }

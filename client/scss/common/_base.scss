@@ -9,3 +9,34 @@ body {
   height: auto;
   min-height: 100%;
 }
+
+a {
+  color: rgba(#fff, .5);
+  transition: color 600ms cubic-bezier(.45, 0, .27, 1);
+
+  &:hover {
+    color: rgba(#fff, .8);
+    text-decoration: none;
+  }
+
+  &:visited {
+    color: rgba(#fff, .5);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+// 移动端
+@media (max-width: 767.98px) {
+  .col-lg-6 {
+    text-align: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  .rv-container {
+    max-width: 960px;
+  }
+}

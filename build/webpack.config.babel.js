@@ -57,8 +57,10 @@ const webpackConfig = {
   entry: {
     home: ['./client/scripts/home/index.js'],
     about: ['./client/scripts/about/index.js'],
-    contact: ['./client/scripts/contact/index.js'],
-    overview: ['./client/scripts/overview/index.js']
+    overview: ['./client/scripts/overview/index.js'],
+    news: ['./client/scripts/news/index.js'],
+    'news-detail': ['./client/scripts/news-detail/index.js'],
+    contact: ['./client/scripts/contact/index.js']
   },
   
   // 出口， 让 webpack 把处理完成的文件放在哪里
@@ -172,6 +174,16 @@ const webpackConfig = {
             }
           },
           {
+            /*
+             * Webpack loader that resolves relative paths in url() statements
+             * based on the original source file
+             */
+            loader: 'resolve-url-loader',
+            options: {
+              debug: isDev
+            }
+          },
+          {
             loader: 'sass-loader',
             options: {
               sourceMap: isDev,
@@ -182,6 +194,16 @@ const webpackConfig = {
             }
           }
         ]
+      },
+      {
+        test: /\.(bmp|gif|jpe?g|png|svg)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            name: '[path][name].[ext]?[hash:8]',
+            limit: 4096 // 4kb
+          }
+        }
       }
     ]
   },
@@ -245,8 +267,10 @@ const { entry } = webpackConfig;
 const htmlMap = {
   home: 'client/pages/home.html',
   about: 'client/pages/about.html',
-  contact: 'client/pages/contact.html',
-  overview: 'client/pages/overview.html'
+  overview: 'client/pages/overview.html',
+  news: 'client/pages/news.html',
+  'news-detail': 'client/pages/news-detail.html',
+  contact: 'client/pages/contact.html'
 };
 
 Object.keys(entry).forEach((item) => {
