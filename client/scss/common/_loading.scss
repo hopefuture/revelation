@@ -1,0 +1,43 @@
+.loading {
+  &-mask {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    transition: opacity .15s linear, background-color .15s linear;
+
+    &.show {
+      background-color: rgba(#000, .5);
+    }
+  }
+
+  &-icon {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 100%;
+    animation: ball-scale 1s 0s ease-in-out infinite;
+  }
+
+  &-open {
+    overflow: hidden;
+  }
+}
+
+@keyframes ball-scale {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}

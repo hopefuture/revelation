@@ -1,6 +1,5 @@
 import { addClass, removeClass } from '../utils/dom-class';
-
-const doc = document;
+import { doc } from '../utils/perfect';
 
 let num = 0;
 const speed = 100;

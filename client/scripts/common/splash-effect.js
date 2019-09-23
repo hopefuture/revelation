@@ -1,7 +1,6 @@
 // 进入首页时动画效果
 import { addClass, removeClass } from '../utils/dom-class';
-
-const doc = document;
+import { doc } from '../utils/perfect';
 
 // 是否是 pc 端
 let isDesktop;

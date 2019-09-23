@@ -1,5 +1,6 @@
 import swiper from './swiper';
 import splashEffect from '../common/splash-effect';
+import qrcode from '../common/qrcode';
 import '../../scss/home.scss';
 
 // 首页效果
@@ -47,6 +48,7 @@ class Site {
   // 动画效果结束后
   splashEffectEnd () {
     swiper();
+    qrcode();
   }
 }
 

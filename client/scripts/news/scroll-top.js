@@ -1,9 +1,7 @@
 import detectPassiveEvents from 'detect-passive-events';
 import TweenFunctions from 'tween-functions';
 import { addClass, removeClass } from '../utils/dom-class';
-
-const win = window;
-const doc = document;
+import { doc, win } from '../utils/perfect';
 
 class ScrollTop {
   constructor () {

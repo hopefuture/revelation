@@ -87,7 +87,7 @@ body {
 
     &-nav {
       display: none;
-      position: absolute;
+      position: fixed;
       z-index: 2000;
       top: 0;
       left: 0;
@@ -170,6 +170,9 @@ body {
 }
 
 .footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   bottom: 0;
   width: 100%;

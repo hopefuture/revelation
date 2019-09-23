@@ -186,7 +186,7 @@ const webpackConfig = {
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: isDev,
+              sourceMap: true, // 必须保留
               sassOptions: {
                 outputStyle: isDev ? 'expanded' : 'compressed', // 不压缩，设为 compressed 表示压缩
                 precision: 15 // 设置小数精度

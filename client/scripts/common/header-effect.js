@@ -1,6 +1,5 @@
 import { addClass, removeClass, containsClass } from '../utils/dom-class';
-
-const doc = document;
+import { doc } from '../utils/perfect';
 
 export default function () {
   window.addEventListener('wheel', (event) => {

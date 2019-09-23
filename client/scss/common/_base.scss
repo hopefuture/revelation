@@ -28,6 +28,18 @@ a {
   }
 }
 
+.scan-attention {
+  margin-top: 3rem;
+  width: 127px;
+  text-align: center;
+
+  p {
+    margin-top: 1rem;
+    font-size: 14px;
+    color: rgba(#fff, .3);
+  }
+}
+
 // 移动端
 @media (max-width: 767.98px) {
   .col-lg-6 {

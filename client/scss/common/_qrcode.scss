@@ -1,0 +1,66 @@
+.qrcode {
+  display: inline-block;
+  margin: 0 .75rem;
+  width: 30px;
+  height: 30px;
+  background: url("../../images/share-weixin.png");
+  cursor: pointer;
+}
+
+.qrcode-img {
+  position: absolute;
+  bottom: 75px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 800ms cubic-bezier(.45, 0, .27, 1), visible 800ms ease-in;
+  pointer-events: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -40px;
+    left: 33.5px;
+    z-index: -1;
+    width: 0;
+    height: 0;
+    border-color: #fff transparent transparent;
+    border-style: solid;
+    border-width: 0;
+  }
+
+  .img-fluid {
+    height: 0;
+    transition: height 800ms cubic-bezier(.45, 0, .27, 1);
+    transform-origin: bottom;
+  }
+
+  &.show {
+    opacity: 1;
+    height: auto;
+    visibility: visible;
+    transition: opacity 800ms cubic-bezier(.45, 0, .27, 1), visible 100ms ease-in;
+
+    &::after {
+      border-width: 30px;
+    }
+
+    .img-fluid {
+      height: auto;
+    }
+  }
+}
+
+// 手机端
+@media (max-width: 767.98px) {
+  .qrcode {
+    display: none;
+  }
+
+  .qrcode-img {
+    display: none;
+  }
+
+  .attention {
+    display: none;
+  }
+}

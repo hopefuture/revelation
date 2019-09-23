@@ -1,5 +1,6 @@
 @import "common/swiper";
 @import "common/page-effect";
+@import "common/qrcode";
 
 .logo-wrapper {
   position: absolute;
@@ -70,6 +71,9 @@
 }
 
 .home-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   z-index: 10;
   bottom: 0;

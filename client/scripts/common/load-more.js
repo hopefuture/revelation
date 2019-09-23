@@ -1,9 +1,7 @@
 import { addClass, removeClass } from '../utils/dom-class';
 import throttle from '../utils/throttle';
 import { parseThreshold, ThresholdUnits } from '../utils/threshold';
-
-const win = window;
-const doc = document;
+import { doc, win } from '../utils/perfect';
 
 class LoadMore {
   constructor ({
@@ -45,6 +43,14 @@ class LoadMore {
   }
   
   onScrollListener (event) {
+    const { deltaX } = event;
+    const detail = deltaX;
+    const direction = detail < -1;
+    // 向上滑动不处理
+    if (direction) {
+      return;
+    }
+    
     const target = doc.documentElement.scrollTop
       ? doc.documentElement
       : doc.body;
@@ -65,6 +71,14 @@ class LoadMore {
       }
       this.next().then(() => {
         this.actionTriggered = false;
+        if (typeof this.loader === 'function') {
+          this.loader(false);
+        }
+      }).catch(() => {
+        this.actionTriggered = false;
+        if (typeof this.loader === 'function') {
+          this.loader(false);
+        }
       });
     }
     

@@ -1,7 +1,6 @@
 import Swiper from 'swiper';
 import textEffect from './text-effect';
-
-const doc = document;
+import { doc } from '../utils/perfect';
 
 export default function () {
   const pagination = doc.querySelector('.swiper-pagination');

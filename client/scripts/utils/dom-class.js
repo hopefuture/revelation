@@ -1,4 +1,4 @@
-const doc = document;
+import { doc } from '../utils/perfect';
 
 function getElement (selector) {
   let element;

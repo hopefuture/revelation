@@ -40,6 +40,49 @@
         background: url("../../images/arrow-right.png");
       }
     }
+
+    &-paging {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 3rem 0;
+      padding: 0;
+      list-style: none;
+      text-align: center;
+
+      .page {
+        padding: .5rem;
+        color: #6d6d6d;
+        cursor: pointer;
+
+        &.prev::before, &.next::after {
+          content: "";
+          display: inline-block;
+          width: 15px;
+          height: 11px;
+        }
+
+        &.prev {
+          margin-right: 1rem;
+
+          &::before {
+            background: url("../../images/arrow-left.png");
+          }
+        }
+
+        &.next {
+          margin-left: 1rem;
+
+          &::after {
+            background: url("../../images/arrow-right.png");
+          }
+        }
+
+        &.active {
+          color: #fff;
+        }
+      }
+    }
   }
 
   // 新闻详情
@@ -92,7 +135,7 @@
       width: 160px;
       height: 0;
       box-sizing: content-box;
-      border: 2px solid rgba(#fff, .5);
+      border: 1px solid rgba(#fff, .5);
       pointer-events: none;
       opacity: 0;
       transition: opacity 600ms cubic-bezier(.45, 0, .27, 1);
@@ -173,5 +216,28 @@
       text-overflow: ellipsis;
       white-space: nowrap;
     }
+  }
+}
+
+// 手机端
+@media (max-width: 767.98px) {
+  .news-share-icon.weixin {
+    display: none;
+  }
+
+  .news-list {
+    margin-left: 0;
+  }
+
+  .news-img {
+    width: 100%;
+  }
+
+  .news-paging {
+    flex-direction: column;
+  }
+
+  .news-paging-text {
+    width: 70%;
   }
 }

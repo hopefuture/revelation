@@ -7,6 +7,10 @@
 
     <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/lib/bootstrap.min.css">
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
   </head>
   <body>
     <header class="header sticky-top">
@@ -42,7 +46,7 @@
       <h4 class="list-header">
         <span class="list-title">新闻中心</span>
       </h4>
-      <div class="list-item mt-2">
+      <div class="list-item mt-2" id="newsList">
         <div class="row no-gutters list-item-inner divider">
           <div class="col-md-6">
             <div class="mr-md-2"><img class="img-fluid" src="../images/news/news-default.jpg" alt=""></div>
@@ -104,12 +108,43 @@
           </div>
         </div>
       </div>
+      <ul class="news-list-paging">
+        <li class="page prev"></li>
+        <li class="page active">01</li>
+        <li class="page">02</li>
+        <li class="page">03</li>
+        <li class="page next"></li>
+      </ul>
     </div>
     <div class="go-top"></div>
     <footer class="footer-assist">
       <div class="footer">
-        Copyright &copy; 2019 LAND Culture (Beijing) Art Co., Ltd.
+        <span class="attention">扫码关注</span>
+        <span class="qrcode"></span>
+        京ICP备 637293236 &copy; 启示（北京）文化艺术产业有限公司
+
+        <div class="qrcode-img">
+          <img class="img-fluid" src="../images/qrcode.png" alt="">
+        </div>
       </div>
     </footer>
+
+    <script type="text/template" id="newsListTmpl">
+      <div class="row no-gutters list-item-inner divider">
+        <div class="col-md-6">
+          <div class="mr-md-2"><img class="img-fluid" src="{{img}}" alt=""></div>
+        </div>
+        <div class="col-md-6">
+          <div class="news-list">
+            <h3 class="news-list-title">{{title}}</h3>
+            <div class="news-list-subtitle">{{title}}</div>
+            <div class="news-list-intro">
+              {{intro}}
+            </div>
+            <a href="./news-detail.html" class="news-list-more">了解更多</a>
+          </div>
+        </div>
+      </div>
+    </script>
   </body>
 </html>

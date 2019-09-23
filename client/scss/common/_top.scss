@@ -18,3 +18,10 @@
     pointer-events: auto;
   }
 }
+
+// 手机端
+@media (max-width: 767.98px) {
+  .go-top {
+    right: 20px;
+  }
+}

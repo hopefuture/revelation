@@ -1,8 +1,6 @@
 import qrcode from 'qrcode';
 import { addClass, removeClass, containsClass } from '../utils/dom-class';
-
-const doc = document;
-const win = window;
+import { doc, win } from '../utils/perfect';
 
 export default class Share {
   constructor () {
