@@ -39,6 +39,10 @@
         margin-left: 5px;
         background: url("../../images/arrow-right.png");
       }
+
+      &:hover::after {
+        background: url("../../images/arrow-right-active.png");
+      }
     }
   }
 
@@ -150,6 +154,10 @@
         margin-right: .75rem;
         background: url("../../images/arrow-left.png");
       }
+
+      &:hover::before {
+        background: url("../../images/arrow-left-active.png");
+      }
     }
 
     &-next {
@@ -164,6 +172,10 @@
         margin-top: 3.5px;
         margin-left: .75rem;
         background: url("../../images/arrow-right.png");
+      }
+
+      &:hover::after {
+        background: url("../../images/arrow-right-active.png");
       }
     }
 

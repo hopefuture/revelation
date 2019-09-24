@@ -19,13 +19,16 @@ class LoadMore {
     if (!_listContainer) {
       return;
     }
+    // 是否在加载中
+    this.loading = false;
+  
+    // 是否已初始化
+    this.inited = false;
     
     // 上一次滑动位置
     this.lastScrollTop = 0;
     // 初始
     this._hasMore = hasMore;
-    // 是否在加载中
-    this.loading = false;
     // 滑动到底部什么部分开始加载更多
     this.scrollThreshold = scrollThreshold;
     // 显示 loader 效果
@@ -71,11 +74,21 @@ class LoadMore {
   }
   
   initEvent () {
-    win.addEventListener('scroll', this.throttledOnScrollListener);
+    win.addEventListener('wheel', this.throttledOnScrollListener);
     this.pageContainer.addEventListener('click', this.handleSwitchPage);
   }
   
   onScrollListener (event) {
+    // 防止多次重复加载更多
+    if (this.loading) {
+      return;
+    }
+  
+    // 如果没有初始化完成，则不滑动
+    if (!this.inited) {
+      return;
+    }
+    
     const { deltaX } = event;
     const detail = deltaX;
     const direction = detail < -1;
@@ -87,11 +100,6 @@ class LoadMore {
     const target = doc.documentElement.scrollTop
       ? doc.documentElement
       : doc.body;
-    
-    // 防止多次重复加载更多
-    if (this.loading) {
-      return;
-    }
     
     // 是否到底部
     const atBottom = this.isElementAtBottom(target);
@@ -114,10 +122,13 @@ class LoadMore {
       
       this.loadPageData(_pageNum, this.pageSize, !this.hasMore).then(json => {
         this.loading = false;
+        setTimeout(() => {
+          this.inited = true;
+        }, 300);
         
         const { totalCount, totalPages } = json.data;
         this.totalPages = totalPages;
-        this.pageNum += 1;
+        this.pageNum = _pageNum;
         this.totalCount = totalCount;
         this.renderPaging();
   
@@ -132,6 +143,9 @@ class LoadMore {
         }
       }).catch(() => {
         this.loading = false;
+        setTimeout(() => {
+          this.inited = true;
+        }, 300);
         if (typeof this.loader === 'function') {
           this.loader(false);
         }
