@@ -1,6 +1,6 @@
 import { doc } from '../utils/perfect';
 
-function getElement (selector) {
+export function getElement (selector) {
   let element;
   if (typeof selector === 'string') {
     element = doc.querySelector(selector);

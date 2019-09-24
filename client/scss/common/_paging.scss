@@ -1,0 +1,74 @@
+.paging {
+  display: none;
+  margin: 3rem 0;
+
+  &.show {
+    display: block;
+  }
+
+  &-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+  }
+
+  &-item {
+    padding: .5rem;
+    color: #6d6d6d;
+    cursor: pointer;
+
+    &.active {
+      color: #fff;
+      cursor: default;
+    }
+
+    &.disabled {
+      color: #666;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    &.prev::before, &.next::after {
+      content: "";
+      display: inline-block;
+      width: 15px;
+      height: 11px;
+    }
+
+    &.prev {
+      margin-right: 1rem;
+
+      &::before {
+        background: url("../../images/arrow-left.png");
+      }
+    }
+
+    &.next {
+      margin-left: .5rem;
+
+      &::after {
+        background: url("../../images/arrow-right.png");
+      }
+    }
+
+    &.more {
+      position: relative;
+      width: 0;
+      margin: 0 .75rem;
+      cursor: default;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        box-shadow: 6px 0 0 0, -4px 0 0 0, -14px 0 0 0;
+        color: rgba(#fff, .6);
+      }
+    }
+  }
+}

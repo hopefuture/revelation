@@ -8,3 +8,5 @@ node_modules
 # 打包文件
 dist
 .history
+client/scripts/components/load-more.js
+client/scripts/components/load-more.js.map

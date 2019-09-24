@@ -40,49 +40,6 @@
         background: url("../../images/arrow-right.png");
       }
     }
-
-    &-paging {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 3rem 0;
-      padding: 0;
-      list-style: none;
-      text-align: center;
-
-      .page {
-        padding: .5rem;
-        color: #6d6d6d;
-        cursor: pointer;
-
-        &.prev::before, &.next::after {
-          content: "";
-          display: inline-block;
-          width: 15px;
-          height: 11px;
-        }
-
-        &.prev {
-          margin-right: 1rem;
-
-          &::before {
-            background: url("../../images/arrow-left.png");
-          }
-        }
-
-        &.next {
-          margin-left: 1rem;
-
-          &::after {
-            background: url("../../images/arrow-right.png");
-          }
-        }
-
-        &.active {
-          color: #fff;
-        }
-      }
-    }
   }
 
   // 新闻详情

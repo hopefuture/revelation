@@ -16,9 +16,10 @@
     "clean": "rimraf ./dist",
     "start": "cross-env NODE_ENV=development webpack-dev-server --config ./build/webpack.config.babel.js",
     "prebuild": "npm run clean",
-    "build": "cross-env NODE_ENV=production webpack --progress --config ./build/webpack.config.babel.js",
+    "build": "cross-env NODE_ENV=production webpack --progress --config ./build/webpack.config.babel.js && cross-env NODE_ENV=production rollup --config ./build/rollup.config.js",
     "postbuild": "sh ./build/to-dist.sh && zip -q -r './revelation.zip' './dist' && mv ./revelation.zip ./dist",
-    "start:prod": "serve dist"
+    "start:prod": "serve dist",
+    "components": "cross-env NODE_ENV=development rollup --config ./build/rollup.config.js -w"
   },
   "dependencies": {
     "animate.css": "^3.7.2",
@@ -54,6 +55,11 @@
     "postcss-loader": "^3.0.0",
     "resolve-url-loader": "^3.1.0",
     "rimraf": "^3.0.0",
+    "rollup": "^1.21.4",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.1.2",
     "sass-loader": "^8.0.0",
     "serve": "^11.1.0",
     "style-loader": "^1.0.0",
