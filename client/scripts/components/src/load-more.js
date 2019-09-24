@@ -25,9 +25,7 @@ class LoadMore {
     // 是否已初始化
     this.inited = false;
     
-    // 上一次滑动位置
-    this.lastScrollTop = 0;
-    // 初始
+    // 是否有更多数据
     this._hasMore = hasMore;
     // 滑动到底部什么部分开始加载更多
     this.scrollThreshold = scrollThreshold;
@@ -74,10 +72,11 @@ class LoadMore {
   }
   
   initEvent () {
-    win.addEventListener('wheel', this.throttledOnScrollListener);
+    win.addEventListener('scroll', this.throttledOnScrollListener);
     this.pageContainer.addEventListener('click', this.handleSwitchPage);
   }
   
+  // 滑轮滚动事件
   onScrollListener (event) {
     // 防止多次重复加载更多
     if (this.loading) {
@@ -109,8 +108,6 @@ class LoadMore {
       this.loading = true;
       this.loadData(this.pageNum + 1);
     }
-    
-    this.lastScrollTop = target.scrollTop;
   }
   
   // 加载数据
@@ -122,6 +119,7 @@ class LoadMore {
       
       this.loadPageData(_pageNum, this.pageSize, !this.hasMore).then(json => {
         this.loading = false;
+        this.pullToRefreshThresholdBreached = false;
         setTimeout(() => {
           this.inited = true;
         }, 300);
@@ -143,6 +141,7 @@ class LoadMore {
         }
       }).catch(() => {
         this.loading = false;
+        this.pullToRefreshThresholdBreached = false;
         setTimeout(() => {
           this.inited = true;
         }, 300);
