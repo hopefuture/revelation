@@ -4,6 +4,7 @@ import { doc, win } from '../../utils/perfect';
 import { getElement } from '../../utils/dom-class';
 
 // 参考 https://github.com/ankeetmaini/react-infinite-scroll-component
+
 class LoadMore {
   constructor ({
     scrollThreshold = '200px', hasMore = true, loader = () => {
