@@ -90,11 +90,11 @@ class ScrollTop {
       this.duration
     );
     
-    if (window.pageYOffset <= this.topPosition) {
+    if (win.pageYOffset <= this.topPosition) {
       this.stopScrolling();
     } else {
-      window.scrollTo(window.pageYOffset, position);
-      this.data.rafId = window.requestAnimationFrame(this.scrollStep);
+      win.scrollTo(win.pageYOffset, position);
+      this.data.rafId = win.requestAnimationFrame(this.scrollStep);
     }
   }
 }
