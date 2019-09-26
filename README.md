@@ -9,6 +9,10 @@
 npm start
 ```
 
+启动后访问
+
+http://localhost:8088
+
 ### 启动构建后服务
 
 注意需要先构建
@@ -17,6 +21,9 @@ npm start
 npm run start:prod
 ```
 
+启动后访问
+
+http://localhost:5000
 
 ## Build
 
