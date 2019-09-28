@@ -11,16 +11,14 @@ body {
 }
 
 a {
-  color: rgba(#fff, .5);
   transition: color 600ms cubic-bezier(.45, 0, .27, 1);
 
   &:hover {
-    color: rgba(#fff, .8);
     text-decoration: none;
   }
 
   &:visited {
-    color: rgba(#fff, .5);
+    color: #fff;
   }
 
   &:focus {

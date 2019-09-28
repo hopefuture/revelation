@@ -40,6 +40,8 @@
       var tmpl = doc.getElementById('newsListTmpl').innerHTML;
       if (data && data.length > 0) {
         data.forEach((item) => {
+          // 后端改成实际的详情链接
+          item.href = './news-detail.html?id=' + item.id;
           var content = win.nunjucks.renderString(tmpl, item);
           tmp.innerHTML = content;
           newsList.append(tmp.children[0]);

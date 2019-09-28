@@ -119,7 +119,6 @@ class LoadMore {
       
       this.loadPageData(_pageNum, this.pageSize, !this.hasMore).then(json => {
         this.loading = false;
-        this.pullToRefreshThresholdBreached = false;
         setTimeout(() => {
           this.inited = true;
         }, 300);
@@ -130,10 +129,12 @@ class LoadMore {
         this.totalCount = totalCount;
         this.renderPaging();
   
-        // 只处理一次
-        if (this.hasMore && this.pageNum * this.pageSize >= this.loadMoreMax) {
+        // 只处理一次，如果是最后一页数据，或者是超过最大可滑动展示的数据，则 this.hashMore 设为 true
+        if (this.hasMore && (this.pageNum >= totalPages || this.pageNum * this.pageSize > this.loadMoreMax)) {
           this.hasMore = false;
-          this.pageContainer.classList.add('show');
+          if (this.pageNum * this.pageSize > this.loadMoreMax) {
+            this.pageContainer.classList.add('show');
+          }
         }
   
         if (typeof this.loader === 'function') {
@@ -141,7 +142,6 @@ class LoadMore {
         }
       }).catch(() => {
         this.loading = false;
-        this.pullToRefreshThresholdBreached = false;
         setTimeout(() => {
           this.inited = true;
         }, 300);
