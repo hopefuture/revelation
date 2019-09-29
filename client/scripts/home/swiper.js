@@ -1,6 +1,6 @@
 import Swiper from 'swiper';
 import textEffect from './text-effect';
-import { doc } from '../utils/perfect';
+import { win, doc } from '../utils/perfect';
 
 export default function () {
   const pagination = doc.querySelector('.swiper-pagination');
@@ -20,12 +20,12 @@ export default function () {
       stopOnLastSlide: false,
       disableOnInteraction: true,
       reverseDirection: false,
-      waitForTransition: false
+      waitForTransition: true
     },
     loop: true,
-    speed: 800,
+    speed: 300,
     allowTouchMove: true,
-    touchAngle: 90,
+    touchAngle: 45,
     mousewheel: {
       sensitivity: 10
     },
@@ -52,6 +52,10 @@ export default function () {
       }
     }
   });
+  
+  win.addEventListener('wheel', () => {
+    swiper.autoplay.stop();
+  }, false);
   
   const swiperSlide = doc.querySelectorAll('.swiper-slide');
   

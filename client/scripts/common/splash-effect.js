@@ -44,7 +44,6 @@ export default function () {
     
     setTimeout(() => {
       clearInterval(interval);
-      removeClass('body', 'main-content-hide');
       resolve();
     }, 2500);
   });

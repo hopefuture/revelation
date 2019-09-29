@@ -163,6 +163,7 @@
       display: flex;
       padding: .5rem 0;
       cursor: pointer;
+      color: rgba(#fff, .5);
 
       &::before {
         content: "";
@@ -173,8 +174,12 @@
         background: url("../../images/arrow-left.png");
       }
 
-      &:hover::before {
-        background: url("../../images/arrow-left-active.png");
+      &:hover {
+        color: #fff;
+
+        &::before {
+          background: url("../../images/arrow-left-active.png");
+        }
       }
     }
 
@@ -182,6 +187,7 @@
       padding: .5rem 0;
       display: flex;
       cursor: pointer;
+      color: rgba(#fff, .5);
 
       &::after {
         content: "";
@@ -192,13 +198,18 @@
         background: url("../../images/arrow-right.png");
       }
 
-      &:hover::after {
-        background: url("../../images/arrow-right-active.png");
+      &:hover {
+        color: #fff;
+
+        &::after {
+          background: url("../../images/arrow-right-active.png");
+        }
       }
     }
 
     &-text {
       width: 350px;
+      text-align: right;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
