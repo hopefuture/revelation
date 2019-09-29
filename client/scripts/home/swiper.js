@@ -8,7 +8,7 @@ export default function () {
   if (tabs) {
     tabs = tabs.split(',');
   } else {
-    tabs = ['关于我们', '项目概览', '联系我们'];
+    tabs = ['关于我们', '项目概览', '新闻中心', '联系我们'];
   }
   
   let te;
