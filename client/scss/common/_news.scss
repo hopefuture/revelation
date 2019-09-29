@@ -183,6 +183,13 @@
       }
     }
 
+    &-text {
+      width: 350px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
     &-next {
       padding: .5rem 0;
       display: flex;
@@ -205,14 +212,10 @@
           background: url("../../images/arrow-right-active.png");
         }
       }
-    }
 
-    &-text {
-      width: 350px;
-      text-align: right;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      .news-paging-text {
+        text-align: right;
+      }
     }
   }
 }
