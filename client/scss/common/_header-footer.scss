@@ -75,6 +75,10 @@ body {
     position: relative;
     display: none;
     padding: .5rem;
+    background: url("../../images/menu.png");
+    width: 44px;
+    height: 29px;
+    text-indent: 10000px;
     cursor: pointer;
 
     &-close {
