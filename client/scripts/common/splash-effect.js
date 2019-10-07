@@ -34,7 +34,7 @@ export default function () {
     
     const interval = setInterval(() => {
       animationRun();
-    }, isDesktop ? 65 : 80);
+    }, isDesktop ? 120 : 140);
     
     addClass('body', 'splash-open');
     

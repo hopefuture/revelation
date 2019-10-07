@@ -15,19 +15,19 @@ export default function () {
   
   const swiper = new Swiper('.swiper-container', {
     direction: 'vertical',
-    autoplay: {
-      delay: 3000,
-      stopOnLastSlide: false,
-      disableOnInteraction: true,
-      reverseDirection: false,
-      waitForTransition: true
-    },
+    // autoplay: {
+    //   delay: 6000,
+    //   stopOnLastSlide: false,
+    //   disableOnInteraction: true,
+    //   reverseDirection: false,
+    //   waitForTransition: true
+    // },
     loop: true,
     speed: 300,
     allowTouchMove: true,
     touchAngle: 45,
     mousewheel: {
-      sensitivity: 10
+      sensitivity: 1
     },
     effect: 'fade',
     fadeEffect: {
@@ -53,10 +53,42 @@ export default function () {
     }
   });
   
-  win.addEventListener('wheel', () => {
-    swiper.autoplay.stop();
-  }, false);
+  // 自动播放
+  let interVal, timer, isPlay;
   
+  function autoPlay () {
+    if (isPlay === true) {
+      return;
+    }
+    isPlay = true;
+    clearInterval(interVal);
+    clearTimeout(timer);
+    interVal = setInterval(function () {
+      swiper.slideNext();
+    }, 6000);
+  }
+  
+  function resetPlay () {
+    if (isPlay === false) {
+      return;
+    }
+    clearInterval(interVal);
+    clearTimeout(timer);
+    isPlay = false;
+    timer = setTimeout(function () {
+      autoPlay();
+    }, 100);
+  }
+  
+  ['touchstart', 'wheel', 'click'].forEach((item) => {
+    win.addEventListener(item, () => {
+      resetPlay();
+    }, false);
+  });
+  
+  autoPlay();
+  
+  // 设置 href
   const swiperSlide = doc.querySelectorAll('.swiper-slide');
   
   [].forEach.call(swiperSlide, (el) => {
