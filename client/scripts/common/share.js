@@ -44,10 +44,16 @@ export default class Share {
     const qrcodeEl = doc.querySelector('.news-share-qrcode');
     if (qrcodeEl) {
       if (containsClass(qrcodeEl, 'show')) {
-        removeClass('.news-share-qrcode', 'show');
+        removeClass('.news-share-qrcode', 'animating');
+        setTimeout(() => {
+          removeClass('.news-share-qrcode', 'show');
+        }, 600);
         win.removeEventListener('click', this.hideQrcode, false);
       } else {
         addClass('.news-share-qrcode', 'show');
+        setTimeout(() => {
+          addClass('.news-share-qrcode', 'animating');
+        });
         win.addEventListener('click', this.hideQrcode, false);
       }
     }
@@ -69,7 +75,10 @@ export default class Share {
   }
   
   hideQrcode () {
-    removeClass('.news-share-qrcode', 'show');
+    removeClass('.news-share-qrcode', 'animating');
+    setTimeout(() => {
+      removeClass('.news-share-qrcode', 'show');
+    }, 600);
     win.removeEventListener('click', this.hideQrcode, false);
   }
 }

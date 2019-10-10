@@ -73,7 +73,8 @@
   &-title {
     text-align: center;
     font-size: 22px;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
+    line-height: 1.5;
   }
 
   &-subtitle {
@@ -110,6 +111,7 @@
     }
 
     &-qrcode {
+      display: none;
       position: absolute;
       top: 40px;
       width: 160px;
@@ -121,6 +123,10 @@
       transition: opacity 600ms cubic-bezier(.45, 0, .27, 1);
 
       &.show {
+        display: inline-block;
+      }
+
+      &.animating {
         z-index: 10;
         height: 160px;
         opacity: 1;
@@ -133,14 +139,13 @@
     padding: 2rem 0;
     border-top: 1px solid #292929;
     border-bottom: 1px solid #292929;
-    font-size: 12px;
+    font-size: 14px;
     color: rgba(#fff, .5);
   }
 
   &-paragraph {
     margin-bottom: 1.5rem;
-    text-indent: 2em;
-    line-height: 2;
+    line-height: 1.8;
 
     &:last-of-type {
       margin-bottom: 0;
@@ -156,7 +161,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 1.5rem;
-    font-size: 12px;
+    font-size: 14px;
     color: rgba(#fff, .5);
 
     &-prev {
@@ -228,6 +233,10 @@
 
   .news-list {
     margin-left: 0;
+  }
+
+  .news-title {
+    font-size: 18px;
   }
 
   .news-img {

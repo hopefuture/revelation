@@ -1,6 +1,7 @@
 body {
   background: #171717;
   color: #fff;
+  overflow-x: hidden;
 }
 
 .header {
@@ -78,7 +79,7 @@ body {
     background: url("../../images/menu.png");
     width: 44px;
     height: 29px;
-    text-indent: 10000px;
+    text-indent: -10000px;
     cursor: pointer;
 
     &-close {
@@ -129,7 +130,7 @@ body {
       li {
         color: #4d4d4d;
         margin: 1rem;
-        font-size: 32px;
+        font-size: 22px;
         opacity: 0;
         transform: translateX(150px);
 
