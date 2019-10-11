@@ -114,6 +114,15 @@
 // 移动端
 @media (max-width: 767.98px) {
   .list {
+    &-item {
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
     &-item-inner {
       margin-top: 1.5rem;
       padding-bottom: 1.5rem;

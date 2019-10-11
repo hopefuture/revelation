@@ -9,6 +9,7 @@
 
 .qrcode-img {
   position: absolute;
+  z-index: 1;
   bottom: 75px;
   opacity: 0;
   visibility: hidden;

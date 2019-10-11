@@ -201,7 +201,7 @@ const webpackConfig = {
           loader: 'url-loader',
           options: {
             name: '[path][name].[ext]?[hash:8]',
-            limit: 4096 // 4kb
+            limit: 10240 // 10kb
           }
         }
       }
@@ -247,8 +247,7 @@ const webpackConfig = {
       ? {
         devServer: {
           port: 8088,
-          // port: 80,
-          host: '0.0.0.0',
+          host: '10.13.85.241',
           disableHostCheck: true,
           overlay: {
             errors: true // 在网页上显示错误

@@ -2,16 +2,19 @@
 @import "common/page-effect";
 @import "common/qrcode";
 
-.logo-wrapper {
+.logo {
   position: absolute;
   z-index: 100;
-  top: 2.875rem;
+  top: 2.5rem;
   left: 8.5rem;
 
-  img {
+  &-icon {
     display: inline-block;
     width: 106px;
     height: 39px;
+    background-image: url("../images/logo.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
   }
 }
 
@@ -94,8 +97,14 @@
     font-size: 26px;
   }
 
-  .logo-wrapper {
-    top: 1.25rem;
-    left: 2rem;
+  .logo {
+    top: 2rem;
+    left: 2.5rem;
+
+    &-icon {
+      width: 77px;
+      height: 28.5px;
+      background-image: url("../images/m-logo.png");
+    }
   }
 }

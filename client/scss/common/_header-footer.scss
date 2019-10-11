@@ -23,10 +23,13 @@ body {
     position: relative;
     z-index: 3000;
 
-    img {
+    &-icon {
       display: inline-block;
       width: 106px;
       height: 39px;
+      background-image: url("../../images/logo.png");
+      background-repeat: no-repeat;
+      background-size: 100%;
     }
   }
 
@@ -76,17 +79,24 @@ body {
     position: relative;
     display: none;
     padding: .5rem;
-    background: url("../../images/menu.png");
-    width: 44px;
-    height: 29px;
+    background-image: url("../../images/menu.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 24px;
+    height: 16px;
     text-indent: -10000px;
     cursor: pointer;
 
     &-close {
       position: absolute;
-      top: 1rem;
-      right: 1rem;
-      padding: 1rem;
+      top: 2.6rem;
+      right: 2.7rem;
+      background-image: url("../../images/close.png");
+      background-repeat: no-repeat;
+      background-size: 100%;
+      width: 17px;
+      height: 16px;
+      text-indent: -10000px;
       cursor: pointer;
     }
 
@@ -191,6 +201,12 @@ body {
 // 移动端
 @media (max-width: 767.98px) {
   .header {
+    &-logo-icon {
+      width: 77px;
+      height: 28.5px;
+      background-image: url("../../images/m-logo.png");
+    }
+
     &-nav {
       display: none;
     }
