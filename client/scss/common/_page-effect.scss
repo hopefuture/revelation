@@ -55,9 +55,6 @@ body {
   height: auto;
   width: 100%;
   background: none;
-  font-size: 28px;
-  line-height: 28px;
-  letter-spacing: 28px;
   text-align: center;
   margin: -15px 0 0;
   transform: scale(.9);
@@ -66,10 +63,16 @@ body {
   .transition-logo-desktop {
     display: none;
     text-indent: 15px;
+    font-size: 28px;
+    line-height: 28px;
+    letter-spacing: 28px;
   }
 
   .transition-logo-mobile {
     display: block;
+    font-size: 28px;
+    line-height: 1.5;
+    letter-spacing: 12px;
   }
 
   span {

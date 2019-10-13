@@ -247,7 +247,7 @@ const webpackConfig = {
       ? {
         devServer: {
           port: 8088,
-          host: '10.13.85.241',
+          host: '0.0.0.0',
           disableHostCheck: true,
           overlay: {
             errors: true // 在网页上显示错误

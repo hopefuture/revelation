@@ -34,14 +34,14 @@ export default function () {
     
     const interval = setInterval(() => {
       animationRun();
-    }, isDesktop ? 120 : 140);
+    }, isDesktop ? 120 : 100);
     
     addClass('body', 'splash-open');
     
     setTimeout(() => {
       removeClass('.splash-bg', 'open');
     }, 2000);
-    
+
     setTimeout(() => {
       clearInterval(interval);
       resolve();
