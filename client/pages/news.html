@@ -65,8 +65,11 @@
           <div class="mr-md-2"><img class="img-fluid" src="{{img}}" alt=""></div>
         </div>
         <div class="col-md-6">
-          <a href="{{href}}}" target="_blank">
+          <a href="{{href}}" target="_blank">
             <div class="news-list">
+              {% if top %}
+              <div class="news-list-top">置顶</div>
+              {% endif %}
               <h3 class="news-list-title">{{title}}</h3>
               <div class="news-list-subtitle">{{date}}</div>
               <div class="news-list-intro">

@@ -1,14 +1,28 @@
 .news {
   &-list {
-    margin-top: 2.875rem;
     margin-left: 1.5rem;
 
+    &-top {
+      display: inline-block;
+      padding: 2px 8px;
+      color: #fff;
+      background: #f7b230;
+      border-radius: 2px;
+      font-size: 12px;
+
+      + .news-list-title {
+        margin-top: 1.25rem;
+      }
+    }
+
     &-title {
+      margin-top: 2.875rem;
       font-size: 18px;
       color: #fff;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+      letter-spacing: 1px;
     }
 
     &-subtitle {
@@ -233,6 +247,14 @@
 
   .news-list {
     margin-left: 0;
+
+    &-top {
+      margin-top: 1.875rem;
+    }
+
+    &-title {
+      margin-top: 1.875rem;
+    }
   }
 
   .news-title {
