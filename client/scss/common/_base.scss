@@ -34,13 +34,6 @@ a {
   }
 }
 
-// 移动端
-@media (max-width: 767.98px) {
-  .col-lg-6 {
-    text-align: center;
-  }
-}
-
 @media (min-width: 1200px) {
   .rv-container {
     max-width: 960px;

@@ -67,9 +67,7 @@ export default class Share {
     const url = win.location.href;
     
     const _t = title + ' ' + description;
-    const appkey = '2806082167'; // 你从微薄获得的appkey
-    const ralateUid = '1752825395';
-    const shareUrl = 'http://service.weibo.com/share/share.php?url=' + url + '&appkey=' + appkey + '&title=' + _t + '&ralateUid=' + ralateUid + '&searchPic=false';
+    const shareUrl = 'http://service.weibo.com/share/share.php?url=' + url + '&title=' + _t + '&searchPic=false';
     
     win.open(shareUrl, '', 'width=700, height=680, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, location=yes, resizable=no, status=no');
   }
