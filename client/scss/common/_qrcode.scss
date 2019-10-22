@@ -10,24 +10,11 @@
 .qrcode-img {
   position: absolute;
   z-index: 1;
-  bottom: 75px;
+  bottom: 65px;
   opacity: 0;
   visibility: hidden;
   transition: opacity 800ms cubic-bezier(.45, 0, .27, 1), visible 800ms ease-in;
   pointer-events: none;
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: -40px;
-    left: 33.5px;
-    z-index: -1;
-    width: 0;
-    height: 0;
-    border-color: #fff transparent transparent;
-    border-style: solid;
-    border-width: 0;
-  }
 
   .img-fluid {
     height: 0;
