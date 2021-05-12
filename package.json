@@ -28,7 +28,7 @@
     "detect-passive-events": "^1.0.4",
     "nunjucks": "^3.2.0",
     "qrcode": "^1.4.2",
-    "swiper": "^4.5.1",
+    "swiper": "^6.5.1",
     "text-effect": "^1.0.1",
     "tween-functions": "^1.2.0"
   },
